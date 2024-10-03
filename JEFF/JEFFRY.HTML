@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My High School Journey</title>
+    <style>
+        body {
+            background-color: hotpink;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            background-color: #333;
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+        .header .icon {
+            display: none;
+        }
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: left;
+        }
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+            background: transparent;
+            order: 2;
+        }
+        .main-content div {
+            flex: 1;
+            order: 1;
+        }
+        .main-content h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            text-align:center;
+        }
+        .main-content p {
+            font-size: 1.2em;
+            margin: 20px;
+        }
+        .main-content button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .main-content button:hover {
+            background-color: #d40813;
+        }
+        @media screen and (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .main-content img {
+                order: 1;
+            }
+            .main-content div {
+                order: 2;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .header a:not(:first-child) {
+                display: none;
+            }
+            .header a.icon {
+                float: right;
+                display: block;
+            }
+            .header.responsive {
+                position: relative;
+            }
+            .header.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .header.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header" id="myTopnav">
+            <a href="#">Home</a>
+            <a href="read.html">Read</a>
+            <a href="collection.html">Collection</a>
+            <a href="#" class="active"></a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">☰</a>            
+        </div>
+        <div class="main-content">
+            <div>
+                <h1>My High School Journey</h1>                     
+            </div>
+            <img src="p1.jpeg" alt="High School Journey Image">
+        </div>
+    </div>
+    <script>
+        function toggleNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "header") {
+                x.className += " responsive";
+            } else {
+                x.className = "header";
+            }
+        }    
+    </script>    
+</body>
+</html>
